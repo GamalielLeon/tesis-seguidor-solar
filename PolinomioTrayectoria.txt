@@ -1,0 +1,42 @@
+Polinomio Cúbico
+ClearAll["Global`*"];
+(*Polinomio de interpolación cúbico*)
+a = {a0,a1,a2,a3};
+f0 = a0 + a1 to + a2 to^2 + a3 to^3;
+f1 = a1 + a2 (2to) + a3 (3to^2);
+f2 = a0 + a1 tf + a2 tf^2 + a3 tf^3;
+f3 = a1 + a2 (2tf) + a3 (3tf^2);
+sol = Flatten[FullSimplify[Solve[{f0==qo,f1==dqo,f2==qf,f3==dqf},a]]];
+(*Cálculo de coeficientes del polinomio*)
+a=(Table[a[[i]]/.sol[[i]],{i,Length[a]}]);
+q[t] = a[[1]]+ a[[2]] t + a[[3]] t^2 + a[[4]] t^3;
+param={qo,dqo,qf,dqf,to,tf};
+(*Valores para determinar la trayectoria a generar*)
+vals = {0,0,Pi/2,0,0,30};
+qpol=FullSimplify[  q[t]/.(Table[param[[i]]->vals[[i]],{i,Length[param]}])  ];
+dqpol = FullSimplify[ D[qpol,t] ];
+ddqpol = FullSimplify[ D[qpol,{t,2}] ];
+Print[ "q[t] = ",qpol ];
+Print["q'[t] = ",dqpol];
+Print["q''[t] = ",ddqpol];
+(*Cálculo de la velocidad máxima con los valores dados en "param"*)
+Wmax=(dqpol/.Solve[D[dqpol,t]==0,t])[[1]];   Print["Wmax = ",Wmax*1.0];
+(*Cálculo de la potencia máxima demandada para elevación con la velocidad máxima*)
+Pmax = 5000*0.3*Wmax/(746*0.48);   Print["Pmax = ",Pmax];
+(*Cálculo de la potencia máxima demandada para azimutal con la velocidad máxima*)
+Iy = 4125;
+Pmax2 = Iy Abs[(ddqpol/.(t-> 60))] Wmax/(746*0.48);   Print["Pmax2 = ",Pmax2];
+q[t] = -((π (t-45) t^2)/27000)
+q'[t] = -((π (t-30) t)/9000)
+q''[t] = -((π (t-15))/4500)
+Wmax = 0.0785398
+Pmax = 0.329004
+Pmax2 = 0.0284239
+Subscript[J, eff] = (Subscript[J, m1]	0
+0	Subscript[J, m2]
+
+) + D(q)
+Subscript[B, eff] = (Subscript[B, m1]+(Subscript[k, b1] Subscript[k, i1])/R1	0
+0	Subscript[B, m2]+(Subscript[k, b2] Subscript[k, i2])/R2
+
+) + c(q,Overscript[q, .])

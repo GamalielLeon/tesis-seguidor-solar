@@ -1,0 +1,172 @@
+% ----------------------------------------------------------------------
+%
+%                          Principal.tex
+%
+%----------------------------------------------------------------------
+%
+% Este archivo contiene el "documento maestro" del documento. Lo único
+% que hace es configurar el entorno LaTeX e incluir los ficheros .tex
+% que contienen cada sección.
+%
+%----------------------------------------------------------------------
+%
+% Los archivos necesarios para este documento son:
+%
+%       TeXiS/* : ficheros de la plantilla TeXiS.
+%       Cascaras/* : ficheros con las partes del documento que no
+%          son capítulos ni apéndices (portada, agradecimientos, etc.)
+%       preliminares/*.tex : documentos preliminares de la tesis como
+%       dedicatoria, Agradecimientos, Resumen, objetivos, introducción,
+%       Simbología, Nomenclatura
+%       capitulos/*.tex : capítulos de la tesis
+%       apendices/*.tex: apéndices y anexos de la tesis
+%       config.tex : configuración de la "compilación" del documento
+%       Principal.tex: Archivo maestro de la tesis desde el cual se realiza
+%       la compilación
+%       upiita.cls : Archivo de la clase de documento, contiene las definiciones
+% Para la bibliografía, además, se necesitan:
+%       XBiblioteca.bib: Archivo de las referencias
+%       *.bib : ficheros con la información de las referencias
+%       mecatexis.prj: permite utilizar los documentos como un proyecto en WinEdt
+%           esto permite compilar desde cualquier archivo sin que se elija el principal.
+% ---------------------------------------------------------------------
+%       Inicio del documento se define la clase y
+%           Mecatexis Tesis: UPIITA-IPN
+%   Copyright (C) 2017 Juan Carlos Guzmán Salgado
+%                      Griselda Sánchez Otero
+%                      Diego Alonso Flores Hernández
+\typeout{Copyright Juan Carlos Guzmán Salgado Griselda Sánchez Otero   Diego Alonso Flores Hernández}
+\documentclass[letterpaper,10pt]{upiita}
+\usepackage{configuracion/upiitatesis}
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{lscape}
+\usepackage{longtable} 
+\usepackage{eurosym}
+\usepackage{colortbl}
+\usepackage{url}
+\usepackage{amssymb}
+\usepackage{listings}
+\usepackage{amsmath}
+\usepackage{bm}
+\usepackage{array}
+\usepackage{rotating}
+
+%%%%%%%%%%%%%  Datos de la Portada y acta
+\title{Seguidor solar industrial de uso ligero, generador de energía eléctrica mediante un sistema fotovoltaico}
+\unidad{\Upiita}
+\materia{Trabajo Terminal II}
+\academia{Mecatr\'onica}
+\grado{Ingeniero en Mecatr\'onica}     %%%%%%%%%%%%%grado
+\mes{Julio}                             %%%%%%%%%%mes
+\anio{2020}                             %%%%%%%%%%año
+%%%%%%%%%%%%  Nombre del Presidente y Secretario del jurado
+\Presidente{M. en C. Germán Escoto Mora }
+\Titular{M. en C. Griselda Sánchez Otero}
+%%%%%%%%%%%%%%%%%%%%%%% Datos del autor%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%  para varios asesores (máximo 4) y autores (alumnos)
+%%  dejar el campo en blanco de los que no deban aparecer
+%%  Cuando el número de asesores=1 sólo se toma en cuenta la variable
+%%% alumnoa,
+%%  Cuando el número de asesores=2 se toman alumnoa y asesorb, etc
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\nalumnos{4}
+%%%%%%% dependiendo del numero de alumno dejar vacío el campo de alumnoX,
+%%%%%%%  nunca eliminar o comentar la línea
+\alumnoa{Brenda Montserrat Chávez Barrios }
+\alumnob{Gamaliel Entrambasaguas León }
+\alumnoc{David Daniel Martínez Bedolla }
+\alumnod{Ana Paulina Ortega Pérez }
+%%%%%%%%%% número de asesores 1= solo se toma en cuenta la variable asesora,
+%%%%%%%%%%  2= se toman asesora y asesorb
+\nasesores{3}
+%%%%%%% en caso de un único asesor dejar vacío el campo de asesorb,
+%%%%%%% nunca eliminar o comentar la línea
+\asesora{Dr. Diego Alonso Flores Hernández}
+\asesorb{Dr. Alberto Luviano Juárez }
+\asesorc{M. en C. Sergio Viveros Bretón }
+%%%%%%%%%genera sección de índice %%%%%%%%%
+\makeindex
+%%%%%% Inicio de documento %%%%%%
+\begin{document}
+\renewcommand{\tablename}{Tabla}
+\renewcommand{\figurename}{Figura}
+\makeatletter \def\@roman#1{\romannumeral #1}\makeatother
+\frontmatter
+%%%%% Inicio de Sección de preliminares
+%%Preliminar
+%%creacion de caratula y hoja de actas
+\portada                  %% Portada
+\acta                     %% Portada con firmas
+\cambiamargen              %%margaenes
+\dedicatoria              %%%modificar archivo dedica.tex
+\agradecimientos          %%%modificar archivo agradece.tex
+\tabladecontenido
+\include{preliminares/Resumen}               %%%modificar archivo Resumen.tex
+\include{preliminares/abstract}               %%%modificar archivo Resumen.tex
+\listadefiguras
+\listadetablas
+%\include{preliminares/Nomenclatura}          %%%modificar archivo Nomenclatura.tex
+%\include{preliminares/Simbologia}            %%%modificar archivo Simbologia.tex
+%% Inicio de Sección Inicial
+\mainmatter
+\inicial
+\include{preliminares/introduccion}          %%%modificar archivo introduccion.tex
+%% Definición del problema
+%% Justificación
+%% Objetivo
+%% enfoque mecatrónico
+%%      %%General
+%%      %%Específico
+%% Antecedentes
+%% Capitulado descripción general del documento mencionando contenidos de cada
+%%              capitulo ;Descripción de los capítulos
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%% Inicia Contenido del trabajo%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%capitulo1111111111%%%%%%%%%%%%%%%%%%%%%%%
+\media
+\include{capitulos/marcoreferencia}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\include{capitulos/diseconceptual}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\include{capitulos/disedetallado}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\include{capitulos/implementacion}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%  \final
+\include{capitulos/Discusion}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\include{capitulos/conclusiones}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%  BIBLIOGRAFIA  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%   \adicional
+\bibliographystyle{IEEEtran} \nocite{*}
+ \bibliography{XBiblioteca.bib}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%    APENDICES  %%%%%%%%%%%%%%%%%%%%%%%%%%%
+\backmatter
+\part{Anexos}
+\anexo
+\include{apendices/anexo1}
+%\include{apendices/anexo2}
+%\include{apendices/anexo3}
+\part{Apéndices}
+\appendix
+\include{apendices/apendice1}
+\include{apendices/apendice2}
+\include{apendices/apendice3}
+\include{apendices/apendice4}
+\include{apendices/apendice5}
+
+%\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%  INDICE ALFABÉTICO%%%%%%%%%%
+%\IndiceAlfabetico
+\end{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 

@@ -1,0 +1,116 @@
+
+\chapter{Introducción}
+%% Este 'capitulo' o sección del documento no  numera ni secciones o subsecciones, se utiliza el esquema de libro para ordenar la información
+México se localiza geográficamente entre los 14° y 33° de latitud septentrional, dentro del circulo solar de la Tierra, obteniendo una irradiación global media diaria de alrededor de $5.5\ \frac{kWh}{m^2}$ \cite{I3:2013:Online}. Con estas características, México se encuentra en el tercer lugar con mayor energía solar. Sin embargo, no se aprovecha al máximo y se sigue haciendo uso de diferentes fuentes de energía como la energía eólica, la hidroeléctrica,, la geotérmica, la de biomasa y los combustibles fósiles.\\
+
+La energía eólica es muy costosa ya que requiere de un mantenimiento y estructura especiales, así como de un estudio geográfico en el que se prevean las corrientes de aire altas y lo más constantes posibles. Las plantas hidroeléctricas tienen alto costo de construcción, además de que requieren un terreno y altura específicas para implementarlas. El aprovechamiento de la energía geotérmica se encuentra limitada en cuanto a localización, además de que genera contaminantes para el agua como ácido sulfhídrico, arsénico y amoniaco. El uso de combustibles fósiles y el aprovechamiento de la energía de biomasa emiten sustancias tóxicas, además de que, en general, se encuentran limitadas en cuanto a disponibilidad en el país. \\
+
+Una celda fotovoltaica no necesita de mantenimiento tan complejo como el de las demás alternativas de energías limpias, además de que las celdas pueden ser instaladas en techos o superficies que no pongan en riesgo a las instalaciones cercanas, sin olvidar que funcionará a través de un recurso limpio, renovable e inagotable: la emisión de radiación solar. Además, las celdas fotovoltaicas no producen gases de efecto invernadero ni producen contaminación acústica. Esta tecnología puede ser instalada aún en lugares donde sea difícil el acceso para obtener energía de otras fuentes, pues el recurso que utiliza es posible encontrarlo en cualquier lugar.\\
+
+Actualmente existe en el mercado una variedad de seguidores solares para uso doméstico, de uno o dos grados de libertad, que no cuentan con interfaces que describan en tiempo real la actividad del seguidor. Del mismo modo, los diseños de los seguidores solares están hechos para ofrecer un mayor rendimiento de energía útil, ya que la mayoría de estos ofrecen alrededor de un 30\% más energía eléctrica respecto a paneles solares estáticos \cite{I4}. \\
+
+\section{Enfoque mecatrónico}
+En este proyecto se diseñó un sistema mecatrónico capaz de generar energía eléctrica haciendo uso de la energía solar. Es aquí en donde entra la Mecatrónica, la cual, según C. W. De Silva, es ''Un campo multidisciplinario, que se refiere al modelado integrado, análisis, diseño, fabricación, control, prueba, y operación de productos y sistemas electromecánicos inteligentes" \cite{I1}.\\
+
+Con base en la definición anterior, el proyecto requirió de múltiples disciplinas y para resolverlo se empleó una metodología mecatrónica basada en el modelo V, la cual consta de un proceso que representa la secuencia de pasos en el desarrollo de ciclo de vida de un proyecto \cite{I2}. Se investigó sobre cada uno de los procesos del sistema, se analizaron los subsistemas y se reunieron los elementos necesarios de cada disciplina para satisfacer de la mejor forma las necesidades y requerimientos presentados. Gracias a la sinergia se logra que cada área de las diversas ingenierías interactúe con las demás de forma que se obtenga el mejor resultado.
+
+\newpage
+\section{Definición del problema}
+
+Una problemática que tienen los seguidores es la resistencia mecánica que deben tener ante las condiciones climatológicas que experimentan; ya que deben soportar impactos fuertes de viento durante las diferentes estaciones del año (alrededor de $25\ m/s$) \cite{I5:2019:Online}, o bien los componentes mecánicos empleados no poseen suficiente resistencia a la corrosión, lo que permite que la lluvia, el polvo y la humedad desgasten al mecanismo disminuyendo su vida útil, por lo que será necesario que el sistema sea capaz de operar en un rango de humedad entre el 10\% y el 75\% \cite{I6:2019:Online}, \cite{I5:2019:Online}, contando también con gabinetes para el hardware utilizado, capaces de soportar las condiciones antes mencionadas. Los componentes más expuestos a la intemperie (en especial los mecánicos) deberán soportar las variaciones de temperatura a lo largo de todo el año, por lo que el sistema deberá operar, al menos, en un rango de temperatura entre -5° y 50° \cite{I7}, \cite{I8}, \cite{I9}. \\
+
+Debe de tomarse en cuenta la forma en que se moverán los mecanismos, es decir, se deberá realizar una selección de efectores de movimiento con base en los requerimientos de seguimiento solar, incluyendo los componentes adicionales para manipular e implementar dichos efectores. Para la selección de estos efectores y sus componentes adicionales, influyen los siguientes criterios:
+
+\begin{multicols}{2}
+	\begin{itemize}
+		\item Facilidad de control
+		\item Consumo energético
+		\item Eficiencia
+		\item Costo
+		\item Peso
+		\item Pérdidas por conversión de energía
+		\item Tamaño
+		\item Mantenimiento
+		\item Tipo de operación
+	\end{itemize}
+\end{multicols}
+
+Es importante mencionar que, dentro de la fabricación de seguidores solares, es más competente aquel que ofrezca un factor de potencia eléctrica mayor. Esto significa que no toda la energía solar que se convierte en energía eléctrica es aprovechada, ya que parte de ésta se disipa durante el funcionamiento de los diferentes dispositivos electrónicos al convertirse en calor o al presentarse perturbaciones, por ejemplo corrientes de Foucault.\\
+
+\newpage
+Por otro lado, algunos seguidores utilizan algoritmos de seguimiento solar que implican una programación compleja en cuanto al manejo de múltiples variables. Dentro del diseño de seguidores solares, la programación de la lógica de movimiento, control y del propio algoritmo debe realizarse de tal forma que se muestre una prioridad entre rutinas para el correcto funcionamiento y así las tareas más importantes se cumplan antes que las menos prioritarias \cite{I10}, \cite{I11}.\\
+
+El objetivo aquí es diseñar, seleccionar e implementar los elementos electrónicos y mecánicos del seguidor, de tal manera que se pierda la menor cantidad de energía posible durante los procesos de conversión y regulación, minimizando las variaciones de tensión eléctrica en todos los componentes, a la par de reducir el consumo energético a un máximo del 5\% de la energía total generada. A largo plazo, la ganancia energética resultará mayor que la que generarían varios paneles fijos.\\
+
+En conjunto, la problemática principal a resolver es satisfacer estas necesidades de manera sinérgica y armónica, para que el seguidor solar cumpla con los requerimientos mecánicos, eléctricos, lógicos y energéticos expuestos, tomando en cuenta que el lugar de operación será dentro de las instalaciones de la UPIITA en la CDMX, México. 
+%%%%%%%%%%%%%%%
+\newpage
+\section{Justificación}
+El sistema a desarrollar debe ser autónomo energéticamente y debe ser capaz de alimentar las cargas externas que el usuario requiera conectar, limitado únicamente a su producción energética; además debe de contar con la opción de una salida para la alimentación de una red eléctrica. La finalidad del seguidor solar es reducir el costo de este seguidor en comparación con los comerciales y maximizar el desempeño del mismo. Por tal razón se elige construir un seguidor de dos grados de libertad, ya que permite una mayor captación de energía solar no solo para un panel, sino para varios de ellos. En las referencias \cite{I12} y \cite{I13} se realizaron estudios de comparación de eficiencia entre paneles fijos y seguidores solares, demostrando un incremento significativo en estos últimos en la producción energética. \\
+
+
+%%%%%%%%%%%%%%%%%%%%
+
+\newpage
+\section{Objetivos}
+\subsection{Objetivo General}
+Diseñar, construir e implementar un robot seguidor solar industrial de uso ligero, autónomo energéticamente con dos grados de libertad, para la generación de al menos 1 KWh de energía eléctrica a través de un sistema fotovoltaico, que permita reducir el error de seguimiento solar y a la par el consumo energético para alimentar una red eléctrica, de acuerdo a los requerimientos del sistema.
+\subsection{Objetivos Particulares}
+\textbf{Trabajo Terminal I}
+\begin{enumerate}
+	\item Diseñar un sistema de seguimiento solar de dos grados de libertad (en configuración elevación-azimutal) que permita seguir la posición/trayectoria del Sol sólo de día, para la generación de al menos 1 KWh de energía eléctrica, cada hora.
+	\item Diseñar un sistema energético que permita captar y acondicionar energía solar, con la que sea capaz de generar y almacenar energía eléctrica.
+	\item Diseñar la estrategia o técnica de control y su etapa de potencia correspondiente para manipular los efectores encargados del movimiento de los mecanismos de seguimiento solar.
+	\item Diseñar una interfaz de usuario que permita controlar y manipular el sistema mediante el ingreso y generación de datos.
+	\item Integrar los sistemas diseñados mediante la metodología de diseño establecida para alcanzar un adecuado balance entre sistemas y una mejor funcionalidad en conjunto.
+	\item Verificar y validar los sistemas diseñados mediante simulaciones y pruebas (análisis por resistencia, por rigidez, análisis modal, análisis de fatiga, análisis por rigidez y resistencia a la configuración de paneles solares debido a las cargas aplicadas por viento y lluvia, simulación del movimiento de seguimiento solar de 1 y 2 grados, etc.), para comprobar que se genere energía eléctrica dentro de una determinada cota de error, de acuerdo a los valores nominales de los paneles utilizados.
+\end{enumerate} 
+\newpage
+\textbf{Trabajo Terminal II}
+\begin{enumerate}
+	\item Fabricar e implementar los sistemas diseñados mediante manufactura, compra, impresión o ensamble de componentes para su posterior verificación de funcionamiento.
+	\item Integrar los sistemas construidos mediante adaptación y sintonización que permita lograr una afinidad y sinergia entre ellos, para verificar y validar su funcionamiento en conjunto.
+	\item Verificar el correcto funcionamiento de los sistemas construidos a través de pruebas y mediciones, con el fin de validar el cumplimiento de los requerimientos establecidos en la fase de diseño.
+	\item Ajustar y acondicionar los parámetros necesarios que permitan el ensamble de todos los sistemas, para asegurar el adecuado funcionamiento del seguidor solar.
+\end{enumerate}
+%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%
+\section{Antecedentes}
+El descubrimiento del efecto fotovoltaico fue hecho por el físico Antoine Becquerel, en el año 1839, el cual consistió en la transformación de la irradiación solar en energía eléctrica, abriendo paso a grandes aportes y descubrimiento en el siglo XIX \cite{I14}. Cinco décadas después, en el año de 1885, el americano Charles Fritts construyó el primer módulo fotoeléctrico, el cual consistía en una fina capa de selenio sobre una superficie metálica.\\
+
+En 1941 fue descrita la primera celda fotovoltaica por Russell Shoemaker Ohl, abriendo paso una década después, a la fabricación de dispositivos fotovoltaicos. En los años cincuenta los laboratorios Bell fabricaron un panel de células fotovoltaicas capaces de alimentar una pequeña máquina encargada de sacar agua de un pozo \cite{I15:2007:Online}, permitiendo su aceptación en la industria y generando mayor interés por parte de distintos investigadores y empresas.\\
+
+A partir de ese momento, el uso de celdas fotovoltaicas ha ido creciendo hasta extender su campo de aplicaciones, desde alimentar un pequeño sistema eléctrico hasta llegar a alimentar una red eléctrica. Actualmente, se observa un crecimiento sostenido en la producción de paneles solares, siendo elaborados de diferentes materiales, dimensiones y capacidades, permitiendo aprovechar la energía solar que es recibida día a día.
+
+\begin{table}[H]
+	\centering
+	\caption{Principales Seguidores Solares investigados}
+	\begin{tabular}{|p{7em}|p{6em}|p{8em}|p{7em}|p{9em}|}
+		\hline
+		\textbf{Nombre del seguidor solar} & \textbf{Tipo de seguimiento} & \textbf{Ventajas} & \textbf{Desventajas} & \textbf{Aportes para el proyecto} \\
+		\hline \hline
+		DuraTrack HZ V3. \cite{I9} (1GDL) (EUA) (CA) (2015) & Algoritmo con entrada de GPS & Hasta 25 \% de ganancia respecto a fijos. La mayoría de los módulos comercialmente disponibles. & Es de un solo eje. Las dimensiones dependen del lugar donde se va a ubicar. & Con este seguidor, se pudieron determinar necesidades y requerimientos para el proyecto \\
+		\hline
+		Seguidor Solar. \cite{I16:2019:Online} (2GDL) (MEX) (CD) (2015) & Seguimiento pasivo con el algoritmo de Michalsky. & Es de 2 ejes. & Utiliza Arduino para su programación. & Se descubrió un nuevo algoritmo de seguimiento para su posible implementación. \\
+		\hline
+		Solar Tracker with Active Orientation. \cite{I6:2019:Online} (1GDL) (RUS) (CD) (2016) & Seguimiento activo & Potencia generada 30\% mayor a un panel fijo. & Es de un solo eje. & Se pudieron extraer características que permitan desarrollar un seguidor solar comercial. \\
+		\hline
+		Seguidor Solar \cite{I17}. (2GDL) (ESP) (CD) (2016) & Seguimiento por medio de sensores fotovoltaicos. & Es de 2 ejes. & Usa protoboard para la circuitería y jumpers para las conexiones. & Se obtuvieron algunos aspectos para mejorar como lo que es no industrial. \\
+		\hline
+		DEGERTRA- CKER S100. \cite{I10} (1GDL) (ESP) (CA) (2017) & Seguimiento con sensor de luz de Detección de Máxima Luminosidad (MLD). & Genera 19.2 kWh, produce una ganancia de entre el 27\% y del 40\% en verano. & Es de un solo eje. & Modelo que funciona con motores de CA. \\
+		\hline
+	\end{tabular}%
+	\label{tab:antecedentes}%
+\end{table}%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Organización del documento}    %%  descripción general del documento mencionando contenidos de cada capitulo
+El capítulo 1 describe el marco de referencia del proyecto, el cual contiene la teoría referente al funcionamiento de un sistema fotovoltaico, el análisis de seguimiento solar y la teoría que conlleva la robótica industrial. Así mismo, se explica el marco procedimental, en el que se define lo que es un sistema mecatrónico, se especifica la metodología de diseño mecatrónico implementada y las herramientas de diseño implementadas, tales como IDEF0, AHP, análisis morfológico y árboles de decisión.\\
+
+En el capítulo 2 se detalla el diseño del sistema acorde a la metodología implementada para el proyecto. Partiendo de las necesidades y requerimientos del sistema se obtiene una arquitectura funcional para dar pauta a una arquitectura física, dividida en módulos. Se incluye la selección de conceptos para definir la forma del proyecto. Posteriormente, se describe el diseño del dominio específico de cada módulo propuesto, selección de componentes y sus respectivas validaciones. De esta forma, se obtiene la integración de dichos módulos para la validación del sistema mecatrónico.\\
+
+El capítulo 3 describe la integración de módulos realizada para conformar el sistema completo, atendiendo la metodología utilizada en este proyecto. Además, se presentan las respectivas validaciones y correcciones o ajustes llevados a cabo para corroborar el correcto funcionamiento del dispositivo mecatrónico.\\
+
+El capítulo 4 contiene un análisis de resultados en el que se evalúa el nivel de ingeniería alcanzado, el costo del proyecto y el valor que este tendrá con base en los objetivos planteados. Además, se expone un análisis de riesgos significativos que influirán en los resultados del proyecto.
+%%%%%%fin del archivo
+\endinput 

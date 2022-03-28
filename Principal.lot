@@ -1,0 +1,73 @@
+\babel@toc {spanish}{}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {1}{\ignorespaces Principales Seguidores Solares investigados}}{8}{table.0.1}% 
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {1.1}{\ignorespaces Escala fundamental del m\'etodo AHP [15]}}{25}{table.1.1}% 
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {2.1}{\ignorespaces Necesidades planteadas para el desarrollo del proyecto.}}{30}{table.2.1}% 
+\contentsline {table}{\numberline {2.2}{\ignorespaces Requerimientos planteados para la etapa de dise\~no.}}{31}{table.2.2}% 
+\contentsline {table}{\numberline {2.3}{\ignorespaces Descomposici\'on funcional del seguidor solar.}}{33}{table.2.3}% 
+\contentsline {table}{\numberline {2.4}{\ignorespaces Descomposici\'on funcional del m\'odulo energ\'etico.}}{38}{table.2.4}% 
+\contentsline {table}{\numberline {2.5}{\ignorespaces Descomposici\'on funcional del mando central.}}{39}{table.2.5}% 
+\contentsline {table}{\numberline {2.6}{\ignorespaces Descomposici\'on funcional de la interfaz.}}{40}{table.2.6}% 
+\contentsline {table}{\numberline {2.7}{\ignorespaces Descomposici\'on funcional del m\'odulo de movimiento azimutal.}}{41}{table.2.7}% 
+\contentsline {table}{\numberline {2.8}{\ignorespaces Descomposici\'on funcional del m\'odulo de movimiento de elevaci\'on.}}{42}{table.2.8}% 
+\contentsline {table}{\numberline {2.9}{\ignorespaces Descomposici\'on funcional del m\'odulo estructural.}}{43}{table.2.9}% 
+\contentsline {table}{\numberline {2.10}{\ignorespaces Criterios generales del sistema.}}{44}{table.2.10}% 
+\contentsline {table}{\numberline {2.11}{\ignorespaces Arquitecturas propuestas}}{44}{table.2.11}% 
+\contentsline {table}{\numberline {2.12}{\ignorespaces Descripci\'on de las arquitecturas}}{45}{table.2.12}% 
+\contentsline {table}{\numberline {2.13}{\ignorespaces Descripci\'on de los protocolos de comunicaci\'on}}{47}{table.2.13}% 
+\contentsline {table}{\numberline {2.14}{\ignorespaces Disposici\'on de los paneles}}{48}{table.2.14}% 
+\contentsline {table}{\numberline {2.15}{\ignorespaces Almas del colector}}{49}{table.2.15}% 
+\contentsline {table}{\numberline {2.16}{\ignorespaces Propuestas de soporte principal}}{50}{table.2.16}% 
+\contentsline {table}{\numberline {2.17}{Matriz morfol\'ogica de selecci\'on para el Dise\~no Conceptual}}{52}{table.2.17}% 
+\contentsline {table}{\numberline {2.18}{\ignorespaces Criterios prioritarios}}{54}{table.2.18}% 
+\contentsline {table}{\numberline {2.19}{\ignorespaces Matriz morfol\'ogica de selecci\'on para el Dise\~no Conceptual mejorado}}{55}{table.2.19}% 
+\contentsline {table}{\numberline {2.20}{\ignorespaces Ventajas y Desventajas del Acero}}{60}{table.2.20}% 
+\contentsline {table}{\numberline {2.21}{\ignorespaces Ventajas y Desventajas del Aluminio.}}{61}{table.2.21}% 
+\contentsline {table}{\numberline {2.22}{Caracter\IeC {\'\i }sticas de las Series de Aluminio}}{63}{table.2.22}% 
+\contentsline {table}{\numberline {2.23}{\ignorespaces Categor\IeC {\'\i }as de estructura.}}{66}{table.2.23}% 
+\contentsline {table}{\numberline {2.24}{\ignorespaces Categor\IeC {\'\i }as de terreno.}}{66}{table.2.24}% 
+\contentsline {table}{\numberline {2.25}{\ignorespaces Valores de $ F_{T} $ para diferentes tipos de topograf\IeC {\'\i }a de terreno.}}{67}{table.2.25}% 
+\contentsline {table}{\numberline {2.26}{\ignorespaces Valor de $ F_{C} $ de acuerdo con la categor\IeC {\'\i }a de la estructura a construirse.}}{68}{table.2.26}% 
+\contentsline {table}{\numberline {2.27}{\ignorespaces Valores de $ \delta $ y $ \alpha $ en funci\'on de la categor\IeC {\'\i }a del terreno.}}{68}{table.2.27}% 
+\contentsline {table}{\numberline {2.28}{\ignorespaces Resultados del an\'alisis te\'orico para el perfil rectangular con 9 materiales distintos.}}{76}{table.2.28}% 
+\contentsline {table}{\numberline {2.29}{\ignorespaces Resultados del an\'alisis te\'orico para el perfil C con 7 materiales distintos.}}{78}{table.2.29}% 
+\contentsline {table}{\numberline {2.30}{\ignorespaces Resultados del an\'alisis te\'orico para el perfil C auxiliar con 7 materiales distintos.}}{79}{table.2.30}% 
+\contentsline {table}{\numberline {2.31}{\ignorespaces Datos obtenidos de la simulaci\'on comparados con los resultados te\'oricos para el perfil rectangular.}}{88}{table.2.31}% 
+\contentsline {table}{\numberline {2.32}{\ignorespaces Datos obtenidos de la simulaci\'on comparados con los resultados te\'oricos para el perfil C.}}{89}{table.2.32}% 
+\contentsline {table}{\numberline {2.33}{\ignorespaces Caracter\IeC {\'\i }sticas t\'ecnicas del motor MTPM-P50-1L18 \cite {motor}.}}{97}{table.2.33}% 
+\contentsline {table}{\numberline {2.34}{\ignorespaces Caracter\IeC {\'\i }sticas t\'ecnicas de la caja reductora WGA-63M-100-H1 \cite {caja_red}.}}{98}{table.2.34}% 
+\contentsline {table}{\numberline {2.35}{\ignorespaces Dimensiones de la transmisi\'on del Movimiento Azimutal}}{99}{table.2.35}% 
+\contentsline {table}{\numberline {2.36}{\ignorespaces Esfuerzos en la corona del eje del Tallo}}{99}{table.2.36}% 
+\contentsline {table}{\numberline {2.37}{\ignorespaces Resultados de la simulaci\'on}}{100}{table.2.37}% 
+\contentsline {table}{\numberline {2.38}{\ignorespaces Coeficiente kf y kt}}{101}{table.2.38}% 
+\contentsline {table}{\numberline {2.39}{\ignorespaces C\'alculo del m\'odulo para la transmisi\'on del movimiento de Elevaci\'on}}{108}{table.2.39}% 
+\contentsline {table}{\numberline {2.40}{\ignorespaces Relaciones de la transmisi\'on}}{108}{table.2.40}% 
+\contentsline {table}{\numberline {2.41}{\ignorespaces Dimensiones de la transmisi\'on del Movimiento Azimutal}}{109}{table.2.41}% 
+\contentsline {table}{\numberline {2.42}{\ignorespaces C\'alculo de las reacciones en la corona}}{110}{table.2.42}% 
+\contentsline {table}{\numberline {2.43}{\ignorespaces Resultados de la simulaci\'on}}{111}{table.2.43}% 
+\contentsline {table}{\numberline {2.44}{\ignorespaces Coeficiente kf y kt}}{111}{table.2.44}% 
+\contentsline {table}{\numberline {2.45}{\ignorespaces Errores m\'aximos de los algoritmos de posici\'on solar [4].}}{115}{table.2.45}% 
+\contentsline {table}{\numberline {2.46}{\ignorespaces Principales caracter\IeC {\'\i }sticas de los sensores seleccionados}}{124}{table.2.46}% 
+\contentsline {table}{\numberline {2.47}{\ignorespaces Modelos de Controllino}}{129}{table.2.47}% 
+\contentsline {table}{\numberline {2.48}{\ignorespaces Caracter\IeC {\'\i }sticas t\'ecnicas paneles solares LDK- 255D-20 \cite {panel}.}}{137}{table.2.48}% 
+\contentsline {table}{\numberline {2.49}{\ignorespaces Tensi\'on nominal de la instalaci\'on en funci\'on de la potencia demandada. \cite {rendimiento}}}{140}{table.2.49}% 
+\contentsline {table}{\numberline {2.50}{\ignorespaces Irradiancia solar \'optima mensual \cite {nasa}.}}{143}{table.2.50}% 
+\contentsline {table}{\numberline {2.51}{\ignorespaces Resultado criterios m\'etodo de selecci\'on multicriterio}}{147}{table.2.51}% 
+\contentsline {table}{\numberline {2.52}{\ignorespaces Porcentaje de ca\IeC {\'\i }da de tensi\'on \cite {birtlh}.}}{154}{table.2.52}% 
+\contentsline {table}{\numberline {2.53}{\ignorespaces Conductividad cobre a diferentes temperaturas \cite {birtlh}. }}{154}{table.2.53}% 
+\contentsline {table}{\numberline {2.54}{\ignorespaces Secci\'on cableado.}}{155}{table.2.54}% 
+\contentsline {table}{\numberline {2.55}{\ignorespaces Caracter\IeC {\'\i }sticas pantalla seleccionada}}{174}{table.2.55}% 
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {3.1}{\ignorespaces Estimaci\'on de costos}}{180}{table.3.1}% 
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {2}{Descripci\'on de los criterios}}{201}{table.0.2}% 
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {3}{\ignorespaces Aluminio 6105}}{204}{table.0.3}% 
+\contentsline {table}{\numberline {4}{\ignorespaces Aluminio 6061}}{205}{table.0.4}% 
+\contentsline {table}{\numberline {5}{\ignorespaces Aluminio 6063}}{206}{table.0.5}% 

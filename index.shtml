@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>P&aacute;gina de prueba del servidor STM32 F767ZI httpd 
+            con CGI</title>
+  <meta charset="utf-8" />
+</head>
+<body BGCOLOR=TURQUOISE>
+  <p align=center><H3><B>Interfaz de Mando Central para demostrar 
+                    la comunicaci&oacute;n EtherNet/IP</B></H3></p>
+  <form method="get" action="/leds.cgi">
+	<!--#tag1-->Encendido<br>
+	<HR WIDTH=250 SIZE=4 COLOR=GRAY ALIGN=LEFT>
+	<H4><B>Modos de operaci&oacute;n</B></H4>
+	<!--#tag2-->Autom&aacute;tico<br>
+	<!--#tag3-->Manual<br>
+	<!--#tag4-->Bajo Consumo<br>
+	Tiempo de espera:<br>
+	<!--#tag5--><br>
+	<HR WIDTH=250 SIZE=4 COLOR=GRAY ALIGN=LEFT>
+	<H4><B>Datos de salida</B></H4></p>
+	&Aacute;ngulo de Elevaci&oacute;n: <!--#tag6--><br>
+	&Aacute;ngulo Azimutal: <!--#tag7--><br>
+	Fecha y hora locales<br>
+	<!--#tag8--><br>
+	<HR WIDTH=250 SIZE=4 COLOR=GRAY ALIGN=LEFT>
+	<br>
+	<input value="Enviar" type="submit">
+  </form>
+</body>
+</html>

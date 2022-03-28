@@ -1,0 +1,210 @@
+Jacobiano Geométrico
+Procedimiento
+1. Obtener la tabla de parámetros por el método de Denavit-Hartenberg para todas las variables de junta, es decir, obtener:
+(i	Subscript[a, i]	Subscript[α, i]	Subscript[θ, i]	Subscript[d, i]
+i				
+⋮				
+n				
+
+) 
+Donde 'n' es el número de variables de junta.
+
+2. Obtener la transformación homogénea del punto del efector final referenciado al marco inercial (o marco fijo, marco 0).
+Para esto, será necesario calcular las matrices de transformación homogénea Subscript[A, i] para cada marco de cada junta, utilizando la expresión dada por el método de Denavit-Hartenberg:
+Subscript[A, i] = (Subscript[C, Subscript[θ, i]]	-Subscript[S, Subscript[θ, i]] Subscript[C, Subscript[α, i]]	Subscript[S, Subscript[θ, i]] Subscript[S, Subscript[α, i]]	Subscript[a, i] Subscript[C, Subscript[θ, i]]
+Subscript[S, Subscript[θ, i]]	Subscript[C, Subscript[θ, i]] Subscript[C, Subscript[α, i]]	-Subscript[C, Subscript[θ, i]] Subscript[S, Subscript[α, i]]	Subscript[a, i] Subscript[S, Subscript[θ, i]]
+0	Subscript[S, Subscript[α, i]]	Subscript[C, Subscript[α, i]]	Subscript[d, i]
+0	0	0	1
+
+), para i = 1,... , n
+Posteriormente, obtener la transformación homogénea a partir de la siguiente expresión:
+T(Subscript[q, 1],Subscript[q, 2], ... ,Subscript[q, n]) = Subscript[T, n]^0 = Subscript[A, 1]*Subscript[A, 2]*...*Subscript[A, n] = 
+UnderoverscriptBox[∏, i = 1, n]
+SubscriptBox[A, i]
+
+3. De la matriz de transformación T, extraer el vector de traslación '(Subscript[d, n]^0)' resultante, sabiendo que:
+T(Subscript[q, 1],...  ,Subscript[q, n]) = Subscript[T, n]^0 = (Subscript[R, n]^0	Subscript[d, n]^0
+0  0  0	1
+
+)       ;      Subscript[d, n]^0 : 3x1     ;     Subscript[d, n]^0 = T(fil1 : fil3 , col4)
+
+4. Sea F = Subscript[d, n]^0, entonces, se utilizará F para obtener los jacobianos de velocidad lineal para cada eslabón, es decir, se calcularán Subscript[Jv, i] jacobianos.
+En esta parte del procedimiento, se deben tomar las siguientes consideraciones:
+a) Para un determinado Subscript[Jv, i], todos los elementos que pertenezcan a un eslabón posterior al i-eslabón analizado, se considerarán como nulos (cero), debido a que no producen efectos sobre el i-eslabón actual, en otras palabras, para un i-eslabón: 
+    Subscript[q, i+1], Subscript[q, i+2], ... = 0   ;   Subscript[c, i+1], Subscript[c, i+2], ... = 0
+    Donde Subscript[q, i], Subscript[q, i+1],... son las variables de junta y Subscript[c, i]   Subscript[c, i+1], ... son parámetros físicos constantes del robot, tales como masas, longitudes, etc.
+b) Del cálculo del vector Subscript[d, n]^0, se puede afirmar que todas las distancias están referenciadas a cada marco de referencia 'i', por lo que es probable que no coincidan con los centros de masa del eslabón 'i'. Este detalle se soluciona de la siguiente manera:
+    Sea el cálculo de un jacobiano Subscript[Jv, i], entonces todas las distancias (o longitudes) Subscript[d, i], y sólo las distancias (o longitudes) Subscript[d, i], serán remplazadas por la distancia al centro de masa del i-eslabón en cuestión, es decir: Subscript[d, i] = Subscript[r, Subscript[cm, i]]. Donde Subscript[d, i] puede ser cualquier parámetro de longitud del robot (como una L, a, d, etc.).
+c) Si todas las distancias (o longitudes) d para el cálculo de un jacobiano Subscript[Jv, i], no coinciden con las condiciones del inciso b), éste último puede omitirse.
+d) Una forma sencilla de comprender el método es ver el procedimiento como una acumulación de efectos, así, para el cálculo del jacobiano Subscript[Jv, 1] únicamente tendrá efecto la variable de junta Subscript[q, 1] y sólo Subscript[q, 1], mientras que para el jacobiano Subscript[Jv, 2] tanto la junta Subscript[q, 1] como Subscript[q, 2] tendrán efecto, y así sucesivamente, hasta llegar al cálculo del jacobiano Subscript[Jv, n] para el cual todas las n variables de junta tendrán efecto y deberán ser consideradas.
+    
+5. Entendidas las condiciones y obtenido el vector F, se puede proceder a calcular cada jacobiano Subscript[Jv, i] de la misma forma en que es calculado un jacobiano analítico:
+Subscript[Jv, i] = (∂Subscript[F, x]/∂Subscript[q, 1]	∂Subscript[F, x]/∂Subscript[q, 2]	...	∂Subscript[F, x]/∂Subscript[q, n]
+∂Subscript[F, y]/∂Subscript[q, 1]	∂Subscript[F, y]/∂Subscript[q, 2]	...	∂Subscript[F, y]/∂Subscript[q, n]
+∂Subscript[F, z]/∂Subscript[q, 1]	∂Subscript[F, z]/∂Subscript[q, 2]	...	∂Subscript[F, z]/∂Subscript[q, n]
+
+)     ;     Donde F = Subscript[d, n]^0= (Subscript[F, x]
+Subscript[F, y]
+Subscript[F, z]
+
+)   ;   F : 3x1
+
+6. Los jacobianos de velocidad angular corresponden sencillamente a las coordenadas del 
+eje de giro de cada variable de junta tipo revoluta, es decir:
+Subscript[Jω, i] = (Subscript[q, 1x]	Subscript[q, 2x]	...	Subscript[q, nx]
+Subscript[q, 1y]	Subscript[q, 2y]	...	Subscript[q, ny]
+Subscript[q, 1z]	Subscript[q, 2z]	...	Subscript[q, nz]
+
+) 
+Sabiendo que sólo las juntas tipo revoluta (angulares) producen efectos rotatorios, además de que siempre se encuentran sobre un único eje de rotación definido, por lo que poseerán sólo una coordenada no nula en alguna de las componentes (x,y,z).
+Para este jacobiano, aplica el mismo principio de acumulación de efectos de las variables de junta como en el jacobiano de velocidad lineal. Los efectos de las i-juntas posteriores a la junta Subscript[q, i] analizada, tendrán un efecto nulo en el cálculo de un determinado jacobiano Subscript[Jω, i].
+
+Jacobiano Velocidad Lineal y matriz D(q)
+jacob1[A_,q_,p1_,rcm_,ρ_] := Module[{i,j,k,n,m,z,I0,T,F,Jv,Jω,Fi},
+n = Length[q];   T= A[[1]];
+Jω = {};   z = {};   z = AppendTo[z,ρ[[1]] {0,0,1}];
+Table[  AppendTo[z,ρ[[i]] T[[1;;3,3]]] ; T = T.A[[i]] ,{i,2,n}  ];
+Table[I0 = ConstantArray[0,{n,3}] ; I0[[1;;i,All]]=Join[Table[z[[j]],{j,1,i}]] ; AppendTo[Jω,Transpose[I0]] ,{i,1,n}];
+Print["Matriz de transformación homogénea T = ",MatrixForm[FullSimplify[T]]];
+F = T[[1;;3,4]];
+Jv = Table[    Fi =F/.Join[  Table[q[[k]]->0,{k,m+1,n}] ,Table[p1[[k]]->0,{k,m+1,n}] ,{p1[[m]]->rcm[[m]]}  ]; Table[ Table[ D[ Fi[[i]],q[[j]] ],{j,1,n} ],{i,1,3} ]   ,{m,1,n}   ];
+Table[  Print[  "Jacobiano J",i,":",FullSimplify[ Join[Jv[[i]],Jω[[i]]] ]  ] , {i,1,n}  ];
+Return[FullSimplify[{Jv,Jω}]];
+]
+jacob2[DH_,q_,rcm_,ρ_] := Module[{i,j,k,n,m,p1,p2,p3,p4,z,I0,A,T,F,Jv,Jω,Fi},
+n = Length[q];
+p1 = DH[[All,1]]; (*Subscript[a, i]*)
+p2 = DH[[All,2]]; (*Subscript[α, i]*)
+p3 = DH[[All,3]]; (*Subscript[θ, i]*)
+p4 = DH[[All,4]]; (*Subscript[d, i]*)
+A = (Cos[θ]	-Sin[θ] Cos[α]	Sin[θ] Sin[α]	a Cos[θ]
+Sin[θ]	Cos[θ] Cos[α]	-Cos[θ] Sin[α]	a Sin[θ]
+0	Sin[α]	Cos[α]	d
+0	0	0	1
+
+);
+T= A/.{a->p1[[1]],α->p2[[1]],θ->p3[[1]],d->p4[[1]]};
+Jω = {};   z = {};   z = AppendTo[z,ρ[[1]] {0,0,1}];
+Table[  AppendTo[z,ρ[[i]] T[[1;;3,3]]] ; T = T.(A/.{a->p1[[i]],α->p2[[i]],θ->p3[[i]],d->p4[[i]]}) ,{i,2,n}  ];
+Table[I0 = ConstantArray[0,{n,3}] ; I0[[1;;i,All]]=Join[Table[z[[j]],{j,1,i}]] ; AppendTo[Jω,Transpose[I0]] ,{i,1,n}];
+Print["Matriz de transformación homogénea T = ",MatrixForm[FullSimplify[T]]];
+F = T[[1;;3,4]];
+Jv = Table[    Fi =F/.Join[  Table[q[[k]]->0,{k,m+1,n}] ,Table[p1[[k]]->0,{k,m+1,n}] ,{p1[[m]]->rcm[[m]]}  ]; Table[ Table[ D[ Fi[[i]],q[[j]] ],{j,1,n} ],{i,1,3} ]   ,{m,1,n}   ];
+Table[  Print[  "Jacobiano J",i,":",FullSimplify[ Join[Jv[[i]],Jω[[i]]] ]  ] , {i,1,n}  ];
+Return[FullSimplify[{Jv,Jω}]];
+]
+matrizD[Jv_,Jω_,M_,R_,Ixyz_] := Module[{i,n,Dq},
+n = Length[M];
+Table[  Print[ "mJv^TJv",i,"= ",FullSimplify[ M[[i]] Transpose[Jv[[i]]].Jv[[i]] ] ],{i,1,n}  ];
+Table[  Print[ "Jω^TSubscript[R, i]^0Subscript[I, i](Subscript[R, i]^0)Jω",i,"= ",FullSimplify[ Transpose[Jω[[i]]].R[[i]].Ixyz[[i]]. Transpose[R[[i]]].Jω[[i]] ] ],{i,1,n}  ];
+Dq =  
+UnderoverscriptBox[∑, i = 1, n](\ \ M[[i]]\ (\ Transpose[\ Jv[[i]]\ ] . Jv[[i]]\ )\  + \ Transpose[\ Jω[[i]]\ ] . R[[i]] . Ixyz[[i]] . Transpose[\ R[[i]]\ ] . Jω[[i]]\ \ );
+Return[FullSimplify[Dq]];
+]
+denHart[dh_] := Module[{A},
+A = (Cos[θ]	-Sin[θ] Cos[α]	Sin[θ] Sin[α]	a Cos[θ]
+Sin[θ]	Cos[θ] Cos[α]	-Cos[θ] Sin[α]	a Sin[θ]
+0	Sin[α]	Cos[α]	d
+0	0	0	1
+
+);
+A= A/.{a->dh[[1]],α->dh[[2]],θ->dh[[3]],d->dh[[4]]};
+Return[FullSimplify[A]];
+]
+trasl[p_] := Module[{A},
+A=Join[Join[IdentityMatrix[3],ArrayReshape[p,{3,1}],2],{{0,0,0,1}}];
+Return[FullSimplify[A]];
+]
+trot[rot_] := Module[{i,var,m,ang,v,R,pos,pos2,aux},
+var = {x,y,z};   m = Join[{var,var,var},2];
+ang = Sum[rot[[i]],{i,3}];   v = rot/ang;
+R = m Transpose[m] (1	-1	1
+1	1	-1
+-1	1	1
+
+) (Outer[Times,v,v]+ Outer[Times,1-v,1-v]);
+pos=Select[v {1,2,3},Slot[1]!=0&][[1]];
+pos2=Select[(1-v) {1,2,3},Slot[1]!=0&];
+aux=var[[pos2]];
+R = R/.{aux[[1]]^2->Cos[ang],aux[[2]]^2->Cos[ang] ,Product[aux[[i]],{i,2}]-> Sin[ang],var[[pos]]-> 1};
+R = Join[Join[R,ConstantArray[0,{3,1}],2],{{0,0,0,1}}];
+Return[FullSimplify[R]];
+]
+Símbolos de Christophel y matriz C(q,q')
+matrizC[Dq_,q_]:=Module[{i,j,k,n,c,C,DQ},
+n = Length[q];
+DQ=Dq/.(Table[q[[i]]-> (q[[i]])[t],{i,1,n}]);
+Table[  c[i][j][k] = FullSimplify[(1/2) (D[  DQ[[k,j]] , q[[i]][t]  ] +  D[  DQ[[k,i]] , q[[j]][t] ] -  D[  DQ[[i,j]] , q[[k]][t]  ])] ; Print["C",i,j,k," = ",c[i][j][k]],{i,1,n},{j,1,n},{k,1,n}  ];
+C = FullSimplify[ Table[
+UnderoverscriptBox[∑, i = 1, n](c[i][j][k])\ D[q[[i]][t], t],{k,1,n},{j,1,n}] ];
+Return[C]
+]
+detEfect[J_] := Module[{i,r,aux,detE},
+r = MatrixRank[J];  Print["El rango del jacobiano es: ",r];    aux = {};
+Table[ If[Norm[J[[i]]]> 0,AppendTo[aux,J[[i]]],,AppendTo[aux,J[[i]]]],{i,1,6} ];
+aux = aux[[1;;r,1;;r]];
+detE = Det[ aux];   Print[aux];
+Return[FullSimplify[detE]];
+]
+Modelo Dinámico
+(* Variables *)
+qvar = {q1,q2};
+ro = {1,1};
+cm = {Lcm1,Lcm2};
+M = {m1,m2};
+(* Parámetros de Denavit-Hartenberg *)
+dh = (0	π/2	q1	L1
+L2	0	q2	0
+
+);
+(* Matrices de rotación entre los marcos de las juntas y el marco inercial *)
+R01 = (Cos[q1]	0	Sin[q1]
+Sin[q1]	0	-Cos[q1]
+0	1	0
+
+) ;  R02 = (Cos[q2]	-Sin[q2]	0
+0	0	1
+Sin[q2]	Cos[q2]	0
+
+);  R = {R01,R02};
+(* Tensores de inercias *)
+I1 = (I1x	0	0
+0	I1y	0
+0	0	I1z
+
+); I2 = (I2x	0	0
+0	I2y	0
+0	0	I2z
+
+);  Ixyz = {I1,I2};
+(* Transformación homogénea del efector final al marco inercial *)
+Ai = {trasl[{0,0,L0}].denHart[dh[[1]]],denHart[dh[[2]]]};
+aux = jacob1[Ai,qvar,dh[[All,1]],cm,ro];
+jv = aux[[1]];   jw = aux[[2]];   (* Jacobianos geométricos de velocidad lineal y angular *)
+Dq = matrizD[jv,jw,M,R,Ixyz];  (* Matriz de inercia *)
+Cq = matrizC[Dq,qvar];                      (* Matriz de coriolis *)
+(* Energía potencial y matriz de gravedad *)
+P = (m1 + m2)g L0 + m1 g Lcm1 + m2 g L1 + m2 g Lcm2 Sin[q2];
+Gq = Table[  D[ P,qvar[[i]] ],{i,Length[qvar]}  ];
+Gq=Gq/.(Table[qvar[[i]]-> (qvar[[i]])[t],{i,Length[qvar]}]);
+
+Print["\n\n\n\t\t********** MODELO CINEMÁTICO **********\n"];
+T02 = Ai[[1]].Ai[[2]];
+Print["x = ",T02[[1,4]]]
+Print["y = ",T02[[2,4]]]
+Print["z = ",T02[[3,4]]]
+Print["\n\t\t********** MODELO DINÁMICO **********\n"];
+Print["D(q) = ",Dq];
+Print["C(q,Overscript[q, .]) = ",Cq];
+Print["G(q) = "MatrixForm[Gq]];
+Print["\n\t\t********** PRUEBA DE ANTISIMETRÍA **********"];
+Print["\t\t\t********** Overscript[D, .](q) - 2C(q,Overscript[q, .]) = S **********\n"];
+Dq=Dq/.(Table[qvar[[i]]-> (qvar[[i]])[t],{i,Length[qvar]}]);
+Print[FullSimplify[D[Dq,t] - 2*Cq]];
+Print["\n\t\t********** ECUACIONES NUMÉRICAS **********\n"];
+(*Valores numéricos para los parámetros físicos del robot*)
+sust = {m1-> 152, m2-> 382, L0-> 3-0.382,Lcm1->0.382/2, Lcm2->0.297, 
+I1x->276.66, I1y->147, I1z->151.1, I2x->463.64, I2y->1352.36, I2z->902.58, g-> 9.81  };
+Print["D(q) = ",(Dq/.sust)];
+Print["C(q,Overscript[q, .]) = ",(Cq/.sust)];
+Print["G(q) = ",MatrixForm[(Gq/.sust)]];
